@@ -8,6 +8,8 @@ using Alf.Utils.SceneUtils;
 using System;
 using Alf.Game.MainGame;
 using Alf.Game.GameMenus;
+using Alf.PlayerScore;
+using System.Collections;
 
 namespace Alf.Game.Management
 {
@@ -37,8 +39,9 @@ public class GameMenuManager : Singleton<GameMenuManager>
 	Action _closeMenuPanelDelegate;
 	Action _gameOverMenuDelegate;
 	Action<bool> _pauseMenuDelegate;
+	DynamicLabelString _playerScoreLabelString;
 
-    protected override void Awake()
+	protected override void Awake()
 	{
 
 		base.Awake();
@@ -47,6 +50,8 @@ public class GameMenuManager : Singleton<GameMenuManager>
 		_panelPrefab  = Resources.Load<GameObject>(PANEL_PREFAB);
 		_buttonPrefab = Resources.Load<GameObject>(BUTTON_PREFAB);
 		_titlePrefab  = Resources.Load<GameObject>(TITLE_PREFAB);
+
+		_playerScoreLabelString = new DynamicLabelString();
 
 		// CreateMenuPanel();
 
@@ -81,19 +86,39 @@ public class GameMenuManager : Singleton<GameMenuManager>
 		// ** Game Over Menu **
 		_gameOverMenu = new GameMenu(new IMenuItemFactory[] {
 			new PrefabTMPLabelFactory(_titlePrefab, "Game Over"),
+			new PrefabTMPLabelFactory(_titlePrefab, _playerScoreLabelString),
 			new PrefabTMPButtonFactory(_buttonPrefab, () => GameEvents.onNewGame?.Invoke(),           "New Game"),
 			new PrefabTMPButtonFactory(_buttonPrefab, () => GameMenuEvents.onMainMenuEvent?.Invoke(), "Main Menu"),
 			new PrefabTMPButtonFactory(_buttonPrefab, () => Application.Quit(),                       "Quit")
 		});
 
 		_closeMenuPanelDelegate = delegate(){CloseMenuPanel();};
-		_gameOverMenuDelegate = delegate(){CreateMenu(_gameOverMenu);};
+		_gameOverMenuDelegate = delegate(){StartCoroutine(DelayGameOver());};
 		_pauseMenuDelegate = delegate(bool b){CreateMenu(_pauseMenu, b);};
 
 		GameEvents.onNewGame.Subscribe(_closeMenuPanelDelegate);
 		GameEvents.onGameOver.Subscribe(_gameOverMenuDelegate);
         GameEvents.onPauseGame.Subscribe(_pauseMenuDelegate);
 
+	}
+
+	IEnumerator DelayGameOver()
+	{
+		yield return new WaitForSeconds(2);
+		UpdatePlayerScore();
+		CreateMenu(_gameOverMenu);
+	}
+
+    private void UpdatePlayerScore()
+	{
+		var scoreRequest = new PlayerScoreRequest(){RequestMet = false};
+		PlayerScoreEvents.onPlayerScoreRequest.Invoke(scoreRequest);
+		if(!scoreRequest.RequestMet)
+		{
+			_playerScoreLabelString.LabelString = "Score not found";
+			return;
+		}
+		_playerScoreLabelString.LabelString = "Score: " + scoreRequest.Score.ToString();
 	}
 
 	void Start()
