@@ -43,7 +43,7 @@ public class Gyro : MonoBehaviour
     void OnDisable()
     {
         _coroutineTimer.Timeout -= BecomeRotten;
-        _coroutineTimer.Timeout -= SelfDestruct;
+        _coroutineTimer.Timeout -= ExpireTimer;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -78,11 +78,18 @@ public class Gyro : MonoBehaviour
         _spriteRenderer.sprite = rottenSprite;
         _currentBehaviour = new NPCMoveToPlayer();
         _coroutineTimer = CoroutineTimer.Init(rottenSelfDestructSeconds);
-        _coroutineTimer.Timeout += SelfDestruct;
+        _coroutineTimer.Timeout += ExpireTimer;
     }
 
-    void SelfDestruct()
+    void ExpireTimer()
     {
+        SelfDestruct(true);
+    }
+
+    void SelfDestruct(bool timeout = false)
+    {
+        if(!timeout)
+            NPCEvents.onNPCDeath.Invoke();
         SpawnParticles();
         Destroy(gameObject);
     }

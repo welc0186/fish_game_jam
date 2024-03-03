@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6098962354406212314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rottenSprite: {fileID: -63447347, guid: bbb224fd633d88f4db1bb051a5bfe897, type: 3}
-  minRottenSeconds: 1
-  maxRottenSeconds: 5
+  minRottenSeconds: 10
+  maxRottenSeconds: 120
   rottenSelfDestructSeconds: 10
   freshParticles: {fileID: 5671153693325740034, guid: 88f728b030c573b4a81faf5ac0027ceb, type: 3}
   rottenParticles: {fileID: 5671153693325740034, guid: 83e5ee0133bfea742a8cd4138be74995, type: 3}

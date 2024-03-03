@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e698bb01e9fce5f4e8fe4cdd10bd3a9b
+guid: a3620d16cae835a43bc7c88d41010685
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -93,60 +93,110 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: space_background_64x64_pico8_0
+      name: button_clicked
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
-        height: 64
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 6}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2139361c37d91b04aa0078116d705a3c
-      internalID: -1506253451
+      spriteID: 0505e611008e5b9488fa1765be283d3d
+      internalID: -422236781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: space_background_64x64_pico8_1
+      name: ui_panel
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 18
+        y: 18
+        width: 28
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 284dfec8896d6cf4fa3442d857b4a6ac
-      internalID: 1045221060
+      spriteID: 8554cf05b58578d41acab1c13aa3765e
+      internalID: -955716339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_selected
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 6, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499bc1bce74105f4e8f9e4e6f5071cc4
+      internalID: 1946340179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_default
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 6, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9796fff3152d1f64aa1668f78f5f41d1
+      internalID: 33097102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tmp_outlinetexture
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18519fb2254c7e40b827e1e545c6aca
+      internalID: -262543413
       vertices: []
       indices: 
       edges: []
@@ -162,8 +212,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      space_background_64x64_pico8_0: -1506253451
-      space_background_64x64_pico8_1: 1045221060
+      button_clicked: -422236781
+      button_default: 33097102
+      button_selected: 1946340179
+      tmp_outlinetexture: -262543413
+      ui_panel: -955716339
+      ui_sprite_sheet_pico8_2: 2106321372
+      ui_sprite_sheet_pico8_4: -1556122674
+      ui_sprite_sheet_pico8_5: 1890231261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

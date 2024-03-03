@@ -56,11 +56,11 @@ public class GameMenuManager : Singleton<GameMenuManager>
 		// CreateMenuPanel();
 
         _titleMenu = new GameMenu(new IMenuItemFactory[] {
-        	new PrefabTMPLabelFactory(_titlePrefab, "GYRO HERO"),
+        	new PrefabTMPLabelFactory(_titlePrefab, "FISH EATING GYROS\nIN SPACE"),
 			new PrefabTMPButtonFactory(_buttonPrefab, () => GameEvents.onNewGame.Invoke(), "Play"),
 			// new PrefabTMPButtonFactory(_buttonPrefab, () => CreateMenu(_settingsMenu),     "Settings"),
-			new PrefabTMPButtonFactory(_buttonPrefab, () => Debug.Log("Settings button clicked"),     "Settings"),
-			new PrefabTMPButtonFactory(_buttonPrefab, () => Application.Quit(),            "Quit")
+			// new PrefabTMPButtonFactory(_buttonPrefab, () => Debug.Log("Settings button clicked"),     "Settings"),
+			// new PrefabTMPButtonFactory(_buttonPrefab, () => Application.Quit(),            "Quit")
 		});
 
 		// TO-DO: Add Settings
@@ -80,7 +80,7 @@ public class GameMenuManager : Singleton<GameMenuManager>
 			new PrefabTMPButtonFactory(_buttonPrefab, () => GameEvents.onNewGame?.Invoke(),           "New Game"),
 			new PrefabTMPButtonFactory(_buttonPrefab, () => CloseMenuPanel(),                         "Resume Game"),
 			new PrefabTMPButtonFactory(_buttonPrefab, () => GameMenuEvents.onMainMenuEvent?.Invoke(), "Main Menu"),
-			new PrefabTMPButtonFactory(_buttonPrefab, () => Application.Quit(),                       "Quit")
+			// new PrefabTMPButtonFactory(_buttonPrefab, () => Application.Quit(),                       "Quit")
 		});
 
 		// ** Game Over Menu **
@@ -89,7 +89,7 @@ public class GameMenuManager : Singleton<GameMenuManager>
 			new PrefabTMPLabelFactory(_titlePrefab, _playerScoreLabelString),
 			new PrefabTMPButtonFactory(_buttonPrefab, () => GameEvents.onNewGame?.Invoke(),           "New Game"),
 			new PrefabTMPButtonFactory(_buttonPrefab, () => GameMenuEvents.onMainMenuEvent?.Invoke(), "Main Menu"),
-			new PrefabTMPButtonFactory(_buttonPrefab, () => Application.Quit(),                       "Quit")
+			// new PrefabTMPButtonFactory(_buttonPrefab, () => Application.Quit(),                       "Quit")
 		});
 
 		_closeMenuPanelDelegate = delegate(){CloseMenuPanel();};

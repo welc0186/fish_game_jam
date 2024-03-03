@@ -15,4 +15,6 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: a2e963664713f0d47913072ecfb55d41, type: 3}
   volume: 1
   loop: 0
-  eventTriggers: []
+  eventTriggers:
+  - assemblyQualifiedName: GameOverCustomEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
