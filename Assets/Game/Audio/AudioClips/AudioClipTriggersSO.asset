@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20b57592f2c203499118fff92de2991, type: 3}
+  m_Name: AudioClipTriggersSO
+  m_EditorClassIdentifier: 
+  audioClipTriggers:
+  - audioClip: {fileID: 11400000, guid: 54896b772a9140449a7a6cf1c04c1891, type: 2}
+    clipTrigger:
+      assemblyQualifiedName: ButtonClickEvent, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - audioClip: {fileID: 11400000, guid: 54896b772a9140449a7a6cf1c04c1891, type: 2}
+    clipTrigger:
+      assemblyQualifiedName: NPCDeathEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - audioClip: {fileID: 11400000, guid: 9b9e304450f8b0f40bb19731718c6f66, type: 2}
+    clipTrigger:
+      assemblyQualifiedName: GameOverCustomEvent, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - audioClip: {fileID: 11400000, guid: 0549ef909ffecbe42bcc9dfc5f6ef2d8, type: 2}
+    clipTrigger:
+      assemblyQualifiedName: PlayerChargeEndEvent, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null

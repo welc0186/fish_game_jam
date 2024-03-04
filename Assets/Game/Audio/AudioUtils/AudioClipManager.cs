@@ -5,7 +5,7 @@ namespace Alf.AudioUtils
 public class AudioClipManager : MonoBehaviour
 {
     
-    [SerializeField] private AudioClipSO[] _audioClipSOs;
+    [SerializeField] private AudioClipTriggersSO _audioClipTriggers;
 
     void Start()
     {
@@ -14,9 +14,9 @@ public class AudioClipManager : MonoBehaviour
 
     private void InitAudioClipPlayers()
     {
-        foreach(AudioClipSO audioClipSO in _audioClipSOs)
+        foreach(AudioClipTrigger clipTrigger in _audioClipTriggers.audioClipTriggers)
         {
-            audioClipSO.RegisterTriggers();
+            clipTrigger.RegisterTrigger();
         }
     }
 }

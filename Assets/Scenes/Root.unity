@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558014613}
   - component: {fileID: 1558014614}
+  - component: {fileID: 1558014615}
   m_Layer: 0
   m_Name: AudioClipManager
   m_TagString: Untagged
@@ -194,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 1558014612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 912.9634, y: 774.04663, z: -1.5616276}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -212,10 +213,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7088afbee5bb1c0439fd6569a1bb3796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClipSOs:
-  - {fileID: 11400000, guid: 9b9e304450f8b0f40bb19731718c6f66, type: 2}
-  - {fileID: 11400000, guid: 54896b772a9140449a7a6cf1c04c1891, type: 2}
-  - {fileID: 11400000, guid: 0549ef909ffecbe42bcc9dfc5f6ef2d8, type: 2}
+  _audioClipSOs: []
+  _audioClipTriggers: {fileID: 11400000, guid: 86fc34503dd83da4c90972c853febfb2, type: 2}
+--- !u!81 &1558014615
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558014612}
+  m_Enabled: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

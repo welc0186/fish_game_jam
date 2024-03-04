@@ -11,18 +11,27 @@ public class AudioClipPlayer
     public AudioClipPlayer(AudioClipSO audioClipSO)
     {
         _audioClipSO = audioClipSO;
+        InitAudioSource();
+    }
+
+    private void InitAudioSource()
+    {
+        if(_audioSource != null)
+            return;
+        
+        _audioSource = new GameObject("Audio Source " + _audioClipSO.name, typeof(AudioSource)).GetComponent<AudioSource>();
+        Object.DontDestroyOnLoad(_audioSource.gameObject);
+        _audioSource.clip = _audioClipSO.audioClip;
+        _audioSource.volume = _audioClipSO.volume;
+        _audioSource.loop = _audioClipSO.loop;
     }
 
     public void Play()
     {
         if(_audioSource == null)
         {
-            _audioSource = new GameObject("Audio Source " + _audioClipSO.name, typeof(AudioSource)).GetComponent<AudioSource>();
-            Object.DontDestroyOnLoad(_audioSource.gameObject);
+            InitAudioSource();
         }
-        _audioSource.clip = _audioClipSO.audioClip;
-        _audioSource.volume = _audioClipSO.volume;
-        _audioSource.loop = _audioClipSO.loop;
         _audioSource.Play();
     }
 
